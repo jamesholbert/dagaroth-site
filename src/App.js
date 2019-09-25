@@ -19,6 +19,8 @@ const tan = '#F7DCA0';
 const grey = '#868DA0';
 const darkblue = '#19384D';
 
+const getFontSize = size => window.innerWidth < 500 ? `${size * .6}rem` : `${size}rem`
+
 const PageWrapper = styled.div`
   display: flex;
   justify-content: space-around;
@@ -28,14 +30,14 @@ const PageWrapper = styled.div`
 
 const Page = styled.div`
   width: 1200px;
-
+  
   @media (max-width: 1200px) {
     width: 100%
   }
 `
 
 const Hero = styled.div`
-  height: 100vh;
+  height: 92vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -44,15 +46,16 @@ const Hero = styled.div`
   background-image: url(${herobackground});
   background-repeat: no-repeat;
   background-position: top center;
-  font-size: 10rem;
+  font-size: ${getFontSize(10)};
   font-family: pacifico;
   color: ${blue};
+  overflow: hidden;
 
   :after {
     content: ${window.innerHeight > 720 ? '' : "'scroll'"};
     position: absolute;
     bottom: 1vh;
-    font-size: 2rem;
+    font-size: ${getFontSize(2)};
     font-family: barlow;
   };
 `
@@ -70,6 +73,7 @@ const ParallaxDiv = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   color: ${p => p.color || tan};
   color: white;
   font-size: 5rem;
@@ -86,19 +90,22 @@ const FullWidthImage = styled.img`
 `
 
 const Header = styled.div`
-  font-size: 7rem;
+  font-size: ${getFontSize(7)};
   text-align: center;
   color: ${darkblue};
 `
 
 const SubHeader = styled(Header)`
-  font-size: 3rem;
+  font-size: ${getFontSize(3)};
 `
 
 const BodyText = styled.div`
   font-family: Questrial;
-  font-size: 3rem;
+  font-size: ${getFontSize(3)};
   text-align: left;
+  width: 95%;
+  position: relative;
+  left: 1rem;
 `
 
 const Footer = styled(SubHeader)`
@@ -140,6 +147,7 @@ const App = () => {
         <Header>
           Synopsis:
         </Header>
+        <SmallWhiteSpaceBuffer />
         <BodyText>
           <p>
             Centuries have passed since a strange mist covered the entire world in this almost-steampunk pre-renaissance dystopia. 
@@ -155,11 +163,10 @@ const App = () => {
             would a skyship be without a helmsman and canoneers? Aloof librarians can be found frequenting corsair vessels in 
             hope to find and protect lost knowledge and uncover new secrets. 
           </p>
-          <p>
-            Will you discover untold story and legend? 
-            Assemble your crew. Dagaroth awaits.            
-          </p>
+          Will you discover untold story and legend? 
+          Assemble your crew. Dagaroth awaits.            
         </BodyText>
+        <SmallWhiteSpaceBuffer />
         <Header>
           Lore:
         </Header>
@@ -171,7 +178,9 @@ const App = () => {
             strength={400}
         >
             <ParallaxDiv>
-              The day the mists came
+              <div>
+                The day the mists came
+              </div>
               <div>
                 <Audio src={theDay}/>
               </div>
@@ -203,7 +212,6 @@ const App = () => {
               </div>
           </ParallaxDiv>
         </Parallax>
-        <WhiteSpaceBuffer />
         <Footer>
           Copyright 2019 James Holbert · All images are public domain
         </Footer>
@@ -214,6 +222,6 @@ const App = () => {
 
 export default App;
 
-const Audio = props => <audio {...props} controls="controls">
+const Audio = props => <audio style={{width: window.innerWidth < 450 ? '200px' : '400px'}} {...props} controls="controls">
   Your browser does not support the audio element.
 </audio>
