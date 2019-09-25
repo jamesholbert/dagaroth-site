@@ -123,7 +123,7 @@ const App = () => {
         </Hero>
         <SmallWhiteSpaceBuffer />
         <Header>
-          An original campaign setting for the Genesys roleplaying system.
+          An original campaign setting for the Genesys tabletop roleplaying system.
         </Header>
         <BannerWrapper>
           <FullWidthImage style={{maxWidth: '800px'}} src={genesys} />
