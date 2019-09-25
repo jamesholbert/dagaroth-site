@@ -1,26 +1,219 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import styled from 'styled-components'
+import { Parallax } from 'react-parallax'
+
+import herobackground from './images/skyship5.png'
+import mist from './images/mist.jpg'
+import birdrider0 from './images/birdrider0.jpg'
+import genesys from './images/genesys.jpg'
+import skyship1 from './images/skyship1.jpg'
+
+import theDay from './audio/the_day_the_mists_came.mp3'
+import theFirstToSail from './audio/the_first_to_sail_the_skies.mp3'
+import hereThereBe from './audio/here_there_be_dragons.mp3'
+
+const blue = '#00648E';
+const orange = '#EDA17B';
+const tan = '#F7DCA0';
+const grey = '#868DA0';
+const darkblue = '#19384D';
+
+const PageWrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
+  background-color: ${grey};
+  color: ${tan};
+`
+
+const Page = styled.div`
+  width: 1200px;
+
+  @media (max-width: 1200px) {
+    width: 100%
+  }
+`
+
+const Hero = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  background-image: url(${herobackground});
+  background-repeat: no-repeat;
+  background-position: top center;
+  font-size: 10rem;
+  font-family: pacifico;
+  color: ${blue};
+
+  :after {
+    content: ${window.innerHeight > 720 ? '' : "'scroll'"};
+    position: absolute;
+    bottom: 1vh;
+    font-size: 2rem;
+    font-family: barlow;
+  };
+`
+
+const SmallWhiteSpaceBuffer = styled.div`
+  height: 10rem;
+`
+const WhiteSpaceBuffer = styled.div`
+  height: 20rem;
+`
+
+const ParallaxDiv = styled.div`
+  height: 40rem;
+  margin: 10rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: ${p => p.color || tan};
+  color: white;
+  font-size: 5rem;
+`
+
+const BannerWrapper = styled.div`
+  margin: 10rem 0 0 0;
+  width: 100%;
+  text-align: center;
+`
+
+const FullWidthImage = styled.img`
+  width: 100%;
+`
+
+const Header = styled.div`
+  font-size: 7rem;
+  text-align: center;
+  color: ${darkblue};
+`
+
+const SubHeader = styled(Header)`
+  font-size: 3rem;
+`
+
+const BodyText = styled.div`
+  font-family: Questrial;
+  font-size: 3rem;
+  text-align: left;
+`
+
+const Footer = styled(SubHeader)`
+  margin-bottom: 2rem;
+`
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <PageWrapper>
+      <Page>
+        <Hero>
+          <span>
+            Dagaroth
+          </span>
+        </Hero>
+        <SmallWhiteSpaceBuffer />
+        <Header>
+          An original campaign setting for the Genesys roleplaying system.
+        </Header>
+        <BannerWrapper>
+          <FullWidthImage style={{maxWidth: '800px'}} src={genesys} />
+        </BannerWrapper>
+        <SmallWhiteSpaceBuffer />
+        <BodyText>
+          Inspired in part by
+          <ul>
+            <li>
+              an original story setting written by Matthew Leon Parker
+            </li>
+            <li>
+              the World of Speir, a similar story setting from the SkyJacks Campaign podcast,
+            </li>
+            <li>
+              the playstation game Legend of Lagaia
+            </li>
+          </ul>
+        </BodyText>
+        <SmallWhiteSpaceBuffer />
+        <Header>
+          Synopsis:
+        </Header>
+        <BodyText>
+          <p>
+            Centuries have passed since a strange mist covered the entire world in this almost-steampunk pre-renaissance dystopia. 
+          </p>
+          <p>
+            Only on the highest hills and mountains can civilization survive. Sail the skies to the inner islands that are 
+            bustling with activity and seek to find trade garrisons after visiting settlements saturated with verdant fields.
+          </p>
+          <p>
+            Hide under the oppressive gaze of the Allied Islands Trading Union, or defy them outright and openly becomes pirates.
+            Though not all vocation need be on a skyship, there's no shortage of things to do on one. Every ship needs a chief 
+            engineer to direct routing of pressure and temperature through sidirume pipes to maneuver and stay aloft; and what 
+            would a skyship be without a helmsman and canoneers? Aloof librarians can be found frequenting corsair vessels in 
+            hope to find and protect lost knowledge and uncover new secrets. 
+          </p>
+          <p>
+            Will you discover untold story and legend? 
+            Assemble your crew. Dagaroth awaits.            
+          </p>
+        </BodyText>
+        <Header>
+          Lore:
+        </Header>
+        <SubHeader>(audio samples)</SubHeader>
+        <SmallWhiteSpaceBuffer />
+        <Parallax
+            bgImage={mist}
+            bgImageAlt="mist"
+            strength={400}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+            <ParallaxDiv>
+              The day the mists came
+              <div>
+                <Audio src={theDay}/>
+              </div>
+            </ParallaxDiv>
+        </Parallax>
+        <WhiteSpaceBuffer />
+        <Parallax
+            bgImage={birdrider0}
+            bgImageAlt="dragon jockey"
+            strength={400}
+        >
+            <ParallaxDiv color={grey}>
+              Here there be dragons
+              <div>
+                <Audio src={hereThereBe}/>
+              </div>
+            </ParallaxDiv>
+        </Parallax>
+        <WhiteSpaceBuffer />
+        <Parallax
+            bgImage={skyship1}
+            bgImageAlt="sky ship"
+            strength={200}
+        >
+            <ParallaxDiv color={orange}>
+              The first to sail the skies
+              <div>
+                <Audio src={theFirstToSail}/>
+              </div>
+          </ParallaxDiv>
+        </Parallax>
+        <WhiteSpaceBuffer />
+        <Footer>
+          Copyright 2019 James Holbert · All images are public domain
+        </Footer>
+      </Page>
+    </PageWrapper>
   );
 }
 
 export default App;
+
+const Audio = props => <audio {...props} controls="controls">
+  Your browser does not support the audio element.
+</audio>
