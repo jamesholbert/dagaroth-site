@@ -108,6 +108,11 @@ const BodyText = styled.div`
   left: 1rem;
 `
 
+const CenterText = styled.div`
+  width: 100%;
+  text-align: center;
+`
+
 const Footer = styled(SubHeader)`
   margin-bottom: 2rem;
 `
@@ -170,7 +175,6 @@ const App = () => {
         <Header>
           Lore:
         </Header>
-        <SubHeader>(audio samples)</SubHeader>
         <SmallWhiteSpaceBuffer />
         <Parallax
             bgImage={mist}
@@ -178,12 +182,10 @@ const App = () => {
             strength={400}
         >
             <ParallaxDiv>
-              <div>
+              <CenterText>
                 The day the mists came
-              </div>
-              <div>
-                <Audio src={theDay}/>
-              </div>
+              </CenterText>
+              <Audio src={theDay}/>
             </ParallaxDiv>
         </Parallax>
         <WhiteSpaceBuffer />
@@ -193,10 +195,10 @@ const App = () => {
             strength={400}
         >
             <ParallaxDiv color={grey}>
-              Here there be dragons
-              <div>
-                <Audio src={hereThereBe}/>
-              </div>
+              <CenterText>
+                Here there be dragons
+              </CenterText>
+              <Audio src={hereThereBe}/>
             </ParallaxDiv>
         </Parallax>
         <WhiteSpaceBuffer />
@@ -206,10 +208,10 @@ const App = () => {
             strength={200}
         >
             <ParallaxDiv color={orange}>
-              The first to sail the skies
-              <div>
-                <Audio src={theFirstToSail}/>
-              </div>
+              <CenterText>
+                The first to sail the skies
+              </CenterText>
+              <Audio src={theFirstToSail}/>
           </ParallaxDiv>
         </Parallax>
         <Footer>
@@ -222,6 +224,6 @@ const App = () => {
 
 export default App;
 
-const Audio = props => <audio style={{width: window.innerWidth < 450 ? '200px' : '400px'}} {...props} controls="controls">
+const Audio = props => <audio style={{width: window.innerWidth < 450 ? '300px' : '400px'}} {...props} controls="controls">
   Your browser does not support the audio element.
 </audio>
