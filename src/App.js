@@ -9,10 +9,12 @@ import mist from './images/mist.jpg'
 import birdrider0 from './images/birdrider0.jpg'
 import genesys from './images/genesys.jpg'
 import skyship1 from './images/skyship1.jpg'
+import doubloons from './images/doubloons.jpeg'
 
 import theDay from './audio/the_day_the_mists_came.mp3'
-import theFirstToSail from './audio/the_first_to_sail_the_skies.mp3'
 import hereThereBe from './audio/here_there_be_dragons.mp3'
+import theFirstToSail from './audio/the_first_to_sail_the_skies.mp3'
+import tradingUnion from './audio/trading_union.mp3'
 
 const blue = '#00648E';
 const orange = '#EDA17B';
@@ -207,6 +209,19 @@ const App = () => {
                 The first to sail the skies
               </CenterText>
               <Audio src={theFirstToSail}/>
+          </ParallaxDiv>
+        </Parallax>
+        <WhiteSpaceBuffer />
+        <Parallax
+            bgImage={doubloons}
+            bgImageAlt="trading union"
+            strength={200}
+        >
+            <ParallaxDiv color={orange}>
+              <CenterText>
+                The Allied Islands Trading Union
+              </CenterText>
+              <Audio src={tradingUnion}/>
           </ParallaxDiv>
         </Parallax>
         <Footer>
