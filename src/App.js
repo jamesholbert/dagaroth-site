@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Parallax } from 'react-parallax'
 
 import herobackground from './images/skyship5.png'
+import hero from './images/hero.jpg'
 import mist from './images/mist.jpg'
 import birdrider0 from './images/birdrider0.jpg'
 import genesys from './images/genesys.jpg'
@@ -19,7 +20,7 @@ const tan = '#F7DCA0';
 const grey = '#868DA0';
 const darkblue = '#19384D';
 
-const getFontSize = size => window.innerWidth < 500 ? `${size * .6}rem` : `${size}rem`
+const getFontSize = size => window.innerWidth < 750 ? `${size * .6}rem` : `${size}rem`
 
 const PageWrapper = styled.div`
   display: flex;
@@ -36,28 +37,21 @@ const Page = styled.div`
   }
 `
 
-const Hero = styled.div`
-  height: 92vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-  background-image: url(${herobackground});
-  background-repeat: no-repeat;
-  background-position: top center;
-  font-size: ${getFontSize(10)};
-  font-family: pacifico;
-  color: ${blue};
-  overflow: hidden;
+const RelativeWrapper = styled.div`
+  position: relative;
+`
 
-  :after {
-    content: ${window.innerHeight > 720 ? '' : "'scroll'"};
-    position: absolute;
-    bottom: 1vh;
-    font-size: ${getFontSize(2)};
-    font-family: barlow;
-  };
+const Hero = styled.img`
+  max-width: 100%;
+`
+const HeroText = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  text-align: center;
+  font-size: ${getFontSize(10)};
+  color: ${blue};
+  font-family: pacifico;
 `
 
 const SmallWhiteSpaceBuffer = styled.div`
@@ -121,11 +115,12 @@ const App = () => {
   return (
     <PageWrapper>
       <Page>
-        <Hero>
-          <span>
+        <RelativeWrapper>
+          <Hero src={hero} />
+          <HeroText>
             Dagaroth
-          </span>
-        </Hero>
+          </HeroText>
+        </RelativeWrapper>
         <SmallWhiteSpaceBuffer />
         <Header>
           An original campaign setting for the Genesys tabletop roleplaying system.
