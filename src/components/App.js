@@ -382,6 +382,25 @@ const App = () => {
               </p>
             </SmallLoreBody>
           </div>
+          <div>
+            <SmallLoreHeader>
+              Miscellaneous Technology
+            </SmallLoreHeader>
+            <SmallLoreBody>
+              <p>
+                While most people weild a cutlass or other form of longblade, some prefer the security of the range that flintlocks 
+                and muskets provide, though they take time to reload.
+              </p>
+              <p>
+                Grappling hooks and harnesses are quite common among aerial vessels, as they've saved more than their fair share of lives.
+              </p>
+              <p>
+                Other small pieces of technology and invention are as colorful and sundry as the number and types of crews sailing the skies.
+                Each ship and settlement all have their own unique twists on the different inventions that people have created to survive in
+                the dangerous skies, hills, and mountains of Dagaroth.
+              </p>
+            </SmallLoreBody>
+          </div>
         </SmallLoreContainer>
         <SmallWhiteSpaceBuffer />
 
