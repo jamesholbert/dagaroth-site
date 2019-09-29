@@ -355,7 +355,21 @@ const App = () => {
               Ravengers, and the Far Lands.
             </SmallLoreBody>
           </div>
+          <div>
+            <SmallLoreHeader>
+              Heart Rings
+            </SmallLoreHeader>
+            <SmallLoreBody>
+              Some settlements don't have enough flat land available to harbor multiple ships, so vessles make port on cliff sides. 
+              This can be accomplished because upon constructing the ship, large steel rings are attached around the keel of the ship, 
+              with chains connecting them to corresponding rings above deck. The rings above deck are standard width so that any ship 
+              ought to be able to dock at any settlement.
 
+              This also enables ships to cool down their furnaces completely (which is in fact usually required by ordinance) upon 
+              making port, but comes at the cost of time when making birth, since a ship has to heat their furnaces hot enough to 
+              achieve initial lift at such an altitude. 
+            </SmallLoreBody>
+          </div>
         </SmallLoreContainer>
         <SmallWhiteSpaceBuffer />
         <Header>
@@ -373,7 +387,21 @@ const App = () => {
             <SmallLoreBody>
               <p>
                 A front for a smuggling vessel, this travelling circus is home for many a corsair and smuggler alike (most of the 
-                world building to come will be done playing a crew aboard this ship).
+                world building to come will be done playing crew aboard this ship).
+              </p>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
+              Captain Curtis Vale
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Captain and Ring Master
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <p>
+                An extremely charismatic bloke. Has talked his way out of more than one tussle with the Trading Union. Typically is the
+                one to coordinate smuggling operations.
               </p>
             </SmallLoreBody>
           </div>
@@ -382,12 +410,13 @@ const App = () => {
               Rick Chival
             </SmallLoreHeader>
             <SmallLoreSubHeader>
-              Canoneer
+              Farmer and Canoneer
             </SmallLoreSubHeader>
             <SmallLoreBody>
               <p>
-                A true gentleman. This former farmer is as equally unassuming as he sounds clueless. Just don't give him reason to 
-                recall his special forces training.
+                A true gentleman. This former farmer's visage portrays equal parts unassuming and clueless, but hides extremely well 
+                his capability and resolve. His former training, which he speaks little of, makes him the perfect agent to take point 
+                on smuggling ventures.
               </p>
             </SmallLoreBody>
           </div>
