@@ -314,23 +314,23 @@ const App = () => {
                 There is no surviving a crash landing into the mist after all.
               </p>
               <p>
-                Even pirates often make the gentemen's play and leave opposing ships limping, as opposed to sinking them and turning
-                them into even more drowned. Death is a cruel mistress, but it knows nothing of the cruelty of living as one of them.
+                Even pirates often make the gentlemen's play and leave opposing ships limping, as opposed to sinking them and turning
+                them into even more drowned. Death is a cruel mistress, but it knows nothing of the cruelty of living as one of them. 
+                Not even a pirate wishes that on a foe.
               </p>
               <p>
-                Captains have even been known to execute their crew on the descent so as to keep them from turning.
+                Captains have even been known to execute their crew on the descent so as to keep them from The Sailor's Portion.
               </p>
               <p>
                 Along with discovering that sidirume floats when heated in steel, the blacksmiths of old, clever as they were, 
-                discovered another things or two about the mysterious powder. To try and avoid these fates, on the underside of the 
-                ships hull, it ain't hard to spot the large drums every 10 or 20 feet. These allow for the steam to spin a turbine made 
-                of a not so dissimilar sidirume alloy and deflect canon fire. Using this technique, helmsman are also able, through 
+                discovered another thing or two about the mysterious powder. To try and avoid sinking, on the underside of the 
+                ships hull, you'll usually spot large drums every 10 or 20 feet. These allow for the steam to spin a turbine made 
+                of a not so dissimilar sidirume alloy and repel canon fire. Using this technique, helmsman are also able, through 
                 coordinating with the engineers, to tack against the wind, even without a dense counter substance like water.
               </p>
               <p>
-                Ship engineers usually have apprentices on board who double as pipe fitters. Breaking pipes from canonfire isn't a 
-                death sentence if you have a couple people on board who can repair and replace pipes in conjuction with the chief 
-                engineer.
+                Ship engineers usually have apprentices on board who double as pipe fitters. Breaking pipes from cannonfire isn't a 
+                death sentence if you have a couple people on board who can repair and replace pipes fast enough.
               </p>
             </SmallLoreBody>
           </BigLoreContainer>
@@ -414,7 +414,7 @@ const App = () => {
             </SmallLoreSubHeader>
             <SmallLoreBody>
               <p>
-                A true gentleman. This former farmer's visage portrays equal parts unassuming and clueless, but hides extremely well 
+                A true gentleman. This former farmer's visage portrays equal parts unassuming and clueless, which hides extremely well 
                 his capability and resolve. His former training, which he speaks little of, makes him the perfect agent to take point 
                 on smuggling ventures.
               </p>
@@ -439,6 +439,19 @@ const App = () => {
             </SmallLoreHeader>
             <SmallLoreSubHeader>
               Archeologist
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <CenterWrapper>
+                (Description coming soon)
+              </CenterWrapper>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
+              Everly Clark
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Engineer
             </SmallLoreSubHeader>
             <SmallLoreBody>
               <CenterWrapper>
