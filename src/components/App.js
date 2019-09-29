@@ -122,6 +122,10 @@ const SmallLoreHeader = styled.div`
   color: ${tan};
 `
 
+const BigLoreContainer = styled.div`
+  grid-column: span 2;
+`
+
 const SmallLoreSubHeader = styled(SmallLoreHeader)`
   font-size: ${getFontSize(2)};
 `
@@ -279,7 +283,7 @@ const App = () => {
                 For such a priceless resource, almost nothing is known about it, where it comes from, why it's there, or even what it is.
               </p>
             </SmallLoreBody>
-          </div>
+          </div>          
           <div>
             <SmallLoreHeader>
               Dagarazi
@@ -299,14 +303,46 @@ const App = () => {
               </p>
             </SmallLoreBody>
           </div>
+          <BigLoreContainer>
+            <SmallLoreHeader>
+              Aerial Combat
+            </SmallLoreHeader>
+            <SmallLoreBody>
+              <p>
+                Since cannon fire is the most dangerous thing in the sky, seeing as how a well placed shot can sunder the sidirume pipes 
+                that are supposed to be keeping the ship aloft, shipwrights take every measure to make vessels as unsinkable as possible. 
+                There is no surviving a crash landing into the mist after all.
+              </p>
+              <p>
+                Even pirates often make the gentemen's play and leave opposing ships limping, as opposed to sinking them and turning
+                them into even more drowned. Death is a cruel mistress, but it knows nothing of the cruelty of living as one of them.
+              </p>
+              <p>
+                Captains have even been known to execute their crew on the descent so as to keep them from turning.
+              </p>
+              <p>
+                Along with discovering that sidirume floats when heated in steel, the blacksmiths of old, clever as they were, 
+                discovered another things or two about the mysterious powder. To try and avoid these fates, on the underside of the 
+                ships hull, it ain't hard to spot the large drums every 10 or 20 feet. These allow for the steam to spin a turbine made 
+                of a not so dissimilar sidirume alloy and deflect canon fire. Using this technique, helmsman are also able, through 
+                coordinating with the engineers, to tack against the wind, even without a dense counter substance like water.
+              </p>
+              <p>
+                Ship engineers usually have apprentices on board who double as pipe fitters. Breaking pipes from canonfire isn't a 
+                death sentence if you have a couple people on board who can repair and replace pipes in conjuction with the chief 
+                engineer.
+              </p>
+            </SmallLoreBody>
+          </BigLoreContainer>
           <div>
             <SmallLoreHeader>
               The Under Guild
             </SmallLoreHeader>
             <SmallLoreBody>
-              <CenterWrapper>
-                (Description coming soon)
-              </CenterWrapper>
+              Secret organizations, seldom in collaboration with one anther, who commission archeologists, scientists, librarians and 
+              others to discover lost histories of Zehiras, the world under the mist, and to uncover new secrets. Their goal is 
+              typically twofold: with the loss of most knowledge, their thirst to know more knows no end, and to keep any valuable 
+              information and discoveries out of the hands of the Allied Islands Trading Union.
             </SmallLoreBody>
           </div>
           <div>
@@ -314,11 +350,12 @@ const App = () => {
               Myths and Legends
             </SmallLoreHeader>
             <SmallLoreBody>
-              <CenterWrapper>
-                (Description coming soon)
-              </CenterWrapper>
+              Old sailors tales. Most common folk don't believe in any of them, but sailors have seen things that they could never
+              convince others of. The most common myths are Sirens, Sky Wales, Wizards, The Fountain of Youth, The Winged, Mad
+              Ravengers, and the Far Lands.
             </SmallLoreBody>
           </div>
+
         </SmallLoreContainer>
         <SmallWhiteSpaceBuffer />
         <Header>
