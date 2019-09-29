@@ -123,7 +123,7 @@ const SmallLoreHeader = styled.div`
 `
 
 const BigLoreContainer = styled.div`
-  grid-column: span 2;
+  ${window.innerWidth > 800 && 'grid-column: span 2'};
 `
 
 const SmallLoreSubHeader = styled(SmallLoreHeader)`
@@ -178,7 +178,7 @@ const App = () => {
         </BodyText>
         <SmallWhiteSpaceBuffer />
         <Header>
-          Synopsis:
+          Synopsis
         </Header>
         <SmallWhiteSpaceBuffer />
         <BodyText>
@@ -201,7 +201,7 @@ const App = () => {
         </BodyText>
         <SmallWhiteSpaceBuffer />
         <Header>
-          Lore:
+          Lore
         </Header>
         <SmallWhiteSpaceBuffer />
         <Parallax
@@ -257,7 +257,7 @@ const App = () => {
         </Parallax>
         <SmallWhiteSpaceBuffer />
         <Header>
-          Additional world flavor:
+          Additional world flavor
         </Header>
         <SmallWhiteSpaceBuffer />
         <SmallLoreContainer>
@@ -359,7 +359,7 @@ const App = () => {
         </SmallLoreContainer>
         <SmallWhiteSpaceBuffer />
         <Header>
-          The Crew:
+          The Crew
         </Header>
         <SmallWhiteSpaceBuffer />
         <SmallLoreContainer>
@@ -427,13 +427,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-// myths and legends
-
-// cicada
-
-
-
-// the crew
