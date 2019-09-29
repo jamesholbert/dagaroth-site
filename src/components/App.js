@@ -177,6 +177,9 @@ const App = () => {
           </ul>
         </BodyText>
         <SmallWhiteSpaceBuffer />
+
+
+
         <Header>
           Synopsis
         </Header>
@@ -200,6 +203,9 @@ const App = () => {
           Assemble your crew. Dagaroth awaits.            
         </BodyText>
         <SmallWhiteSpaceBuffer />
+
+
+
         <Header>
           Lore
         </Header>
@@ -256,6 +262,9 @@ const App = () => {
           </ParallaxDiv>
         </Parallax>
         <SmallWhiteSpaceBuffer />
+
+
+
         <Header>
           Additional world flavor
         </Header>
@@ -319,7 +328,7 @@ const App = () => {
                 Not even a pirate wishes that on a foe.
               </p>
               <p>
-                Captains have even been known to execute their crew on the descent so as to keep them from The Sailor's Portion.
+                Captains have even been known to execute their crew on the descent so as to keep them from receiving the sailor's portion.
               </p>
               <p>
                 Along with discovering that sidirume floats when heated in steel, the blacksmiths of old, clever as they were, 
@@ -360,18 +369,24 @@ const App = () => {
               Heart Rings
             </SmallLoreHeader>
             <SmallLoreBody>
-              Some settlements don't have enough flat land available to harbor multiple ships, so vessles make port on cliff sides. 
-              This can be accomplished because upon constructing the ship, large steel rings are attached around the keel of the ship, 
-              with chains connecting them to corresponding rings above deck. The rings above deck are standard width so that any ship 
-              ought to be able to dock at any settlement.
-
-              This also enables ships to cool down their furnaces completely (which is in fact usually required by ordinance) upon 
-              making port, but comes at the cost of time when making birth, since a ship has to heat their furnaces hot enough to 
-              achieve initial lift at such an altitude. 
+              <p>
+                Some settlements don't have enough flat land available to harbor multiple ships, so vessles make port on cliff sides. 
+                This can be accomplished because upon constructing the ship, large steel rings are attached around the keel of the ship, 
+                with chains connecting them to corresponding rings above deck. The rings above deck are standard width so that any ship 
+                ought to be able to dock at any settlement.
+              </p>
+              <p>
+                This also enables ships to cool down their furnaces completely (which is usually required by ordinance) upon 
+                making port, but comes at the cost of time when making birth, since a ship has to heat their furnaces hot enough to 
+                achieve initial lift at such an altitude. 
+              </p>
             </SmallLoreBody>
           </div>
         </SmallLoreContainer>
         <SmallWhiteSpaceBuffer />
+
+
+
         <Header>
           The Crew
         </Header>
@@ -452,6 +467,19 @@ const App = () => {
             </SmallLoreHeader>
             <SmallLoreSubHeader>
               Engineer
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <CenterWrapper>
+                (Description coming soon)
+              </CenterWrapper>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
+              Gomez Carmichael
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Beast Tamer and Quartermaster
             </SmallLoreSubHeader>
             <SmallLoreBody>
               <CenterWrapper>
