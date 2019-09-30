@@ -5,7 +5,6 @@ import { Parallax } from 'react-parallax'
 
 import Audio from './audio'
 
-import herobackground from '../images/skyship5.png'
 import hero from '../images/hero.jpg'
 import mist from '../images/mist.jpg'
 import birdrider0 from '../images/birdrider0.jpg'
@@ -166,7 +165,7 @@ const App = () => {
           Inspired in part by
           <ul>
             <li>
-              an original story setting written by Matthew Leon Parker
+              an original story setting written by <a href='https://matthew-parker-portfolio.herokuapp.com/' rel="noopener noreferrer" target='_blank'>Matthew Leon Parker</a>
             </li>
             <li>
               the World of Speir, a similar story setting from the SkyJacks Campaign podcast,
