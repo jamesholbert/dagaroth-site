@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import { Parallax } from 'react-parallax'
 
 import Audio from './audio'
+import Table from './table'
+import { Ability, Challenge, Setback, Boost, Difficulty, Proficiency } from './dice'
+import { Success, Failure, Threat, Triumph, Advantage, Despair } from './dice'
 
 import herobackground from '../images/skyship5.png'
 import hero from '../images/hero.jpg'
@@ -507,6 +510,24 @@ const App = () => {
             </SmallLoreBody>
           </div>
         </SmallLoreContainer>
+        <SmallWhiteSpaceBuffer />
+
+        
+        <Header>
+          Genesys Tables
+        </Header>
+        <SmallWhiteSpaceBuffer />
+        <SubHeader>
+          Additional Vehicle Actions
+        </SubHeader>
+        <Table
+          columns={[{title: 'Action'}, {title: 'Skill and Difficulty'}, {title: 'Results'}]}
+          rows={[
+            {values: ['Plot Course', <>Average (<Difficulty /><Difficulty />) Piloting or Hard (<Difficulty /><Difficulty /><Difficulty />) Perception</>, <>The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled <Success /> reduces the <Setback /> suffered for difficult terrain by one.</>]},
+            {values: ['Plot Course', 'Average Piloting or Hard Perception', 'The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled success reduces the Setback suffered for difficult terrain by one.']}
+          ]}
+        />
+        <SmallWhiteSpaceBuffer />
         <Footer>
           Copyright 2019 James Holbert · All images are public domain
         </Footer>
@@ -516,3 +537,4 @@ const App = () => {
 }
 
 export default App;
+
