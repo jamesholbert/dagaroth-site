@@ -523,7 +523,7 @@ const App = () => {
         <Table
           columns={[{title: 'Action'}, {title: 'Skill and Difficulty'}, {title: 'Results'}]}
           rows={[
-            {values: ['Plot Course', <>Average (<Difficulty /><Difficulty />) Piloting or Hard (<Difficulty /><Difficulty /><Difficulty />) Perception</>, <>The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled <Success /> reduces the <Setback /> suffered for difficult terrain by one.</>]},
+            {values: ['Plot Course', 'Average (<Difficulty /><Difficulty />) Piloting or Hard (<Difficulty /><Difficulty /><Difficulty />) Perception</>, <>The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled <Success /> reduces the <Setback /> suffered for difficult terrain by one.']},
             {values: ['Plot Course', 'Average Piloting or Hard Perception', 'The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled success reduces the Setback suffered for difficult terrain by one.']}
           ]}
         />
@@ -537,4 +537,3 @@ const App = () => {
 }
 
 export default App;
-

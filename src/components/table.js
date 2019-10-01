@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Ability, Challenge, Setback, Boost, Difficulty, Proficiency } from './dice'
+import { Success, Failure, Threat, Triumph, Advantage, Despair } from './dice'
+
 const tableBlue = '#E0F3FC';
 const genesysOrange = '#F69337';
 
@@ -57,3 +60,27 @@ const Table = ({ columns, rows, rowClass, eventData }) => {
 };
 
 export default Table;
+
+const symbolFilter = string => {
+  const words = string.split(' ')
+  let newWords = []
+  words.forEach(word => {
+    if (Object.keys(symbolMap).includes(word)) {
+      newWords.push(symbolMap[word]) 
+    }
+    else {
+      newWords.push(word)
+    }
+  })
+
+  return newWords;
+}
+
+const symbolMap = {
+  success: <Success />,
+  failure: <Failure />,
+  threat: <Threat />,
+  advantage: <Advantage />,
+  triumph: <Triumph />,
+  despair: <Despair />
+}
