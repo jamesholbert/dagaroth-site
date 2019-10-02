@@ -7,6 +7,8 @@ import Audio from './audio'
 import Table from './table'
 import Accordion from './accordion'
 
+import useWidth from '../hooks/useWidth'
+
 import { criticalHitsOnShip, additionalVehicleActions, jockeyActions } from '../helpers/tables'
 import { getFontSize } from '../helpers'
 
@@ -29,130 +31,133 @@ const grey = '#868DA0';
 const darkblue = '#19384D';
 
 
-const PageWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  background-color: ${grey};
-  color: ${tan};
-`
-
-const Page = styled.div`
-  width: 1200px;
-  
-  @media (max-width: 1200px) {
-    width: 100%
-  }
-`
-
-const RelativeWrapper = styled.div`
-  position: relative;
-`
-
-const Hero = styled.img`
-  max-width: 100%;
-`
-const HeroText = styled.div`
-  width: 100%;
-  position: absolute;
-  top: 30%;
-  text-align: center;
-  font-size: ${getFontSize(10)};
-  color: ${blue};
-  font-family: pacifico;
-`
-
-const SmallWhiteSpaceBuffer = styled.div`
-  height: 10rem;
-`
-const WhiteSpaceBuffer = styled.div`
-  height: 20rem;
-`
-
-const ParallaxDiv = styled.div`
-  height: 40rem;
-  margin: 10rem 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  color: ${p => p.color || tan};
-  color: white;
-  font-size: 5rem;
-`
-
-const BannerWrapper = styled.div`
-  margin: 10rem 0 0 0;
-  width: 100%;
-  text-align: center;
-`
-
-const FullWidthImage = styled.img`
-  width: 100%;
-`
-
-const Header = styled.div`
-  font-size: ${getFontSize(7)};
-  text-align: center;
-  color: ${darkblue};
-`
-
-const SubHeader = styled(Header)`
-  font-size: ${getFontSize(3)};
-`
-
-const LinkHeader = styled(SubHeader)`
-  color: ${blue};
-  cursor: pointer;
-`
-
-const BodyText = styled.div`
-  font-family: Questrial;
-  font-size: ${getFontSize(3)};
-  text-align: left;
-  width: 95%;
-  position: relative;
-  left: 1rem;
-`
-
-const CenterText = styled.div`
-  width: 100%;
-  text-align: center;
-`
-
-const SmallLoreContainer = styled.div`
-  display: grid;
-  grid-template-columns: ${window.innerWidth > 800 ? '50% 50%' : '100%'};
-`
-
-const SmallLoreHeader = styled.div`
-  text-align: center;
-  font-size: ${getFontSize(3)};
-  color: ${tan};
-`
-
-const BigLoreContainer = styled.div`
-  ${window.innerWidth > 800 && 'grid-column: span 2'};
-`
-
-const SmallLoreSubHeader = styled(SmallLoreHeader)`
-  font-size: ${getFontSize(2)};
-`
-
-const SmallLoreBody = styled.div`
-  padding: 3rem;
-  font-size: ${getFontSize(2)};
-  color: ${tan};
-`
-
-const CenterWrapper = styled.div`
-  text-align: center;
-`
-
-const Footer = styled(SubHeader)`
-  margin-bottom: 2rem;
-`
-
 const App = () => {
+  const wide = useWidth();
+
+  const PageWrapper = styled.div`
+    display: flex;
+    justify-content: space-around;
+    background-color: ${grey};
+    color: ${tan};
+  `
+
+  const Page = styled.div`
+    width: 1200px;
+    
+    @media (max-width: 1200px) {
+      width: 100%
+    }
+  `
+
+  const RelativeWrapper = styled.div`
+    position: relative;
+  `
+
+  const Hero = styled.img`
+    max-width: 100%;
+  `
+  const HeroText = styled.div`
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    font-size: ${getFontSize(10, wide)};
+    color: ${blue};
+    font-family: pacifico;
+  `
+
+  const SmallWhiteSpaceBuffer = styled.div`
+    height: 10rem;
+  `
+  const WhiteSpaceBuffer = styled.div`
+    height: 20rem;
+  `
+
+  const ParallaxDiv = styled.div`
+    height: 40rem;
+    margin: 10rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: ${p => p.color || tan};
+    color: white;
+    font-size: 5rem;
+  `
+
+  const BannerWrapper = styled.div`
+    margin: 10rem 0 0 0;
+    width: 100%;
+    text-align: center;
+  `
+
+  const FullWidthImage = styled.img`
+    width: 100%;
+  `
+
+  const Header = styled.div`
+    font-size: ${getFontSize(7, wide)};
+    text-align: center;
+    color: ${darkblue};
+  `
+
+  const SubHeader = styled(Header)`
+    font-size: ${getFontSize(3, wide)};
+  `
+
+  const LinkHeader = styled(SubHeader)`
+    color: ${blue};
+    cursor: pointer;
+  `
+
+  const BodyText = styled.div`
+    font-family: Questrial;
+    font-size: ${getFontSize(3, wide)};
+    text-align: left;
+    width: 95%;
+    position: relative;
+    left: 1rem;
+  `
+
+  const CenterText = styled.div`
+    width: 100%;
+    text-align: center;
+  `
+
+  const SmallLoreContainer = styled.div`
+    display: grid;
+    grid-template-columns: ${wide ? '50% 50%' : '100%'};
+  `
+
+  const SmallLoreHeader = styled.div`
+    text-align: center;
+    font-size: ${getFontSize(3, wide)};
+    color: ${tan};
+  `
+
+  const BigLoreContainer = styled.div`
+    ${wide && 'grid-column: span 2'};
+  `
+
+  const SmallLoreSubHeader = styled(SmallLoreHeader)`
+    font-size: ${getFontSize(2, wide)};
+  `
+
+  const SmallLoreBody = styled.div`
+    padding: 3rem;
+    font-size: ${getFontSize(2, wide)};
+    color: ${tan};
+  `
+
+  const CenterWrapper = styled.div`
+    text-align: center;
+  `
+
+  const Footer = styled(SubHeader)`
+    margin-bottom: 2rem;
+  `
+
+
   return (
     <PageWrapper>
       <Page>
@@ -575,7 +580,7 @@ const App = () => {
           )}
         >
           <LinkHeader color={orange}>
-            Toggle Genesys Combat Tables {window.innerWidth < 800 && '(not optimized for mobile)'}
+            Toggle Genesys Combat Tables {!wide && '(not optimized for mobile)'}
           </LinkHeader>
         </Accordion>
         <SmallWhiteSpaceBuffer />

@@ -1,28 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import useWidth from '../hooks/useWidth'
+
 import { getFontSize } from '../helpers'
 
 const tableBlue = '#E0F3FC';
 const genesysOrange = '#F69337';
 
-const TableComponent = styled.table`
-  width: 100%;
-  font-size: ${getFontSize(2)};
-  color: black;
-`
-
-const TableHeader = styled.th`
-  color: white;
-  background-color: ${genesysOrange};
-`
-
 const Table = ({ columns, rows, rowClass, eventData }) => {
+  const wide = useWidth();
+
+  const TableComponent = styled.table`
+    width: 100%;
+    font-size: ${getFontSize(2, wide)};
+    color: black;
+  `
+
+  const TableHeader = styled.th`
+    color: white;
+    background-color: ${genesysOrange};
+  `
+
   const tableColumns = columns ? (
     <tr>
       {columns.map((col, i) => {
         return (
-          <TableHeader style={{ width: window.innerWidth > 800 && col.width }} className={col.align ? 'text-' + col.align : ''} key={i}>
+          <TableHeader style={{ width: wide && col.width }} className={col.align ? 'text-' + col.align : ''} key={i}>
             {col.title || ''}
           </TableHeader>
         );
