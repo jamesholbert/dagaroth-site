@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styled from 'styled-components'
 import { Parallax } from 'react-parallax'
 
 import Audio from './audio'
+import Table from './table'
+import Accordion from './accordion'
+
+import { criticalHitsOnShip, additionalVehicleActions, jockeyActions } from '../helpers/tables'
+import { getFontSize } from '../helpers'
 
 import hero from '../images/hero.jpg'
 import mist from '../images/mist.jpg'
@@ -23,7 +28,6 @@ const tan = '#F7DCA0';
 const grey = '#868DA0';
 const darkblue = '#19384D';
 
-const getFontSize = size => window.innerWidth < 750 ? `${size * .6}rem` : `${size}rem`
 
 const PageWrapper = styled.div`
   display: flex;
@@ -94,6 +98,11 @@ const Header = styled.div`
 
 const SubHeader = styled(Header)`
   font-size: ${getFontSize(3)};
+`
+
+const LinkHeader = styled(SubHeader)`
+  color: ${blue};
+  cursor: pointer;
 `
 
 const BodyText = styled.div`
@@ -494,6 +503,32 @@ const App = () => {
           </div>
           <div>
             <SmallLoreHeader>
+              Dustin Thuswindburn
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Deck Hand
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <CenterWrapper>
+                (Description coming soon)
+              </CenterWrapper>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
+              Micah Perrier
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Deck Hand
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <CenterWrapper>
+                (Description coming soon)
+              </CenterWrapper>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
               Gomez Carmichael
             </SmallLoreHeader>
             <SmallLoreSubHeader>
@@ -506,6 +541,44 @@ const App = () => {
             </SmallLoreBody>
           </div>
         </SmallLoreContainer>
+        <SmallWhiteSpaceBuffer />
+
+        
+        <Accordion
+          contents={(
+            <Fragment>
+              <SmallWhiteSpaceBuffer />
+              <SubHeader>
+                Additional Vehicle Actions
+              </SubHeader>
+              <Table
+                columns={[{title: 'Action'}, {title: 'Skill and Difficulty', width: 200}, {title: 'Results'}]}
+                rows={additionalVehicleActions}
+              />
+              <SmallWhiteSpaceBuffer />
+              <SubHeader>
+                Jockey Actions
+              </SubHeader>
+              <Table
+                columns={[{title: 'Action'}, {title: 'Skill and Difficulty', width: 200}, {title: 'Results'}]}
+                rows={jockeyActions}
+              />
+              <SmallWhiteSpaceBuffer />
+              <SubHeader>
+                Vehicle Critical Hits
+              </SubHeader>
+              <Table
+                columns={[{title: 'd100', width: 75}, {title: 'Severity', width: 175}, {title: 'Result'}]}
+                rows={criticalHitsOnShip}
+              />
+            </Fragment>
+          )}
+        >
+          <LinkHeader color={orange}>
+            Toggle Genesys Combat Tables {window.innerWidth < 800 && '(not optimized for mobile)'}
+          </LinkHeader>
+        </Accordion>
+        <SmallWhiteSpaceBuffer />
         <Footer>
           Copyright 2019 James Holbert · All images are public domain
         </Footer>
@@ -515,3 +588,5 @@ const App = () => {
 }
 
 export default App;
+
+
