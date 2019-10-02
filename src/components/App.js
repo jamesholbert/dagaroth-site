@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styled from 'styled-components'
 import { Parallax } from 'react-parallax'
 
 import Audio from './audio'
 import Table from './table'
-import { Ability, Challenge, Setback, Boost, Difficulty, Proficiency } from './dice'
-import { Success, Failure, Threat, Triumph, Advantage, Despair } from './dice'
+import Accordion from './accordion'
 
-import herobackground from '../images/skyship5.png'
+import { criticalHitsOnShip, additionalVehicleActions, jockeyActions } from '../helpers/tables'
+import { getFontSize } from '../helpers'
+
 import hero from '../images/hero.jpg'
 import mist from '../images/mist.jpg'
 import birdrider0 from '../images/birdrider0.jpg'
@@ -27,7 +28,6 @@ const tan = '#F7DCA0';
 const grey = '#868DA0';
 const darkblue = '#19384D';
 
-const getFontSize = size => window.innerWidth < 750 ? `${size * .6}rem` : `${size}rem`
 
 const PageWrapper = styled.div`
   display: flex;
@@ -98,6 +98,11 @@ const Header = styled.div`
 
 const SubHeader = styled(Header)`
   font-size: ${getFontSize(3)};
+`
+
+const LinkHeader = styled(SubHeader)`
+  color: ${blue};
+  cursor: pointer;
 `
 
 const BodyText = styled.div`
@@ -498,6 +503,32 @@ const App = () => {
           </div>
           <div>
             <SmallLoreHeader>
+              Dustin Thuswindburn
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Deck Hand
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <CenterWrapper>
+                (Description coming soon)
+              </CenterWrapper>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
+              Micah Perrier
+            </SmallLoreHeader>
+            <SmallLoreSubHeader>
+              Deck Hand
+            </SmallLoreSubHeader>
+            <SmallLoreBody>
+              <CenterWrapper>
+                (Description coming soon)
+              </CenterWrapper>
+            </SmallLoreBody>
+          </div>
+          <div>
+            <SmallLoreHeader>
               Gomez Carmichael
             </SmallLoreHeader>
             <SmallLoreSubHeader>
@@ -513,20 +544,40 @@ const App = () => {
         <SmallWhiteSpaceBuffer />
 
         
-        <Header>
-          Genesys Tables
-        </Header>
-        <SmallWhiteSpaceBuffer />
-        <SubHeader>
-          Additional Vehicle Actions
-        </SubHeader>
-        <Table
-          columns={[{title: 'Action'}, {title: 'Skill and Difficulty'}, {title: 'Results'}]}
-          rows={[
-            {values: ['Plot Course', 'Average (<Difficulty /><Difficulty />) Piloting or Hard (<Difficulty /><Difficulty /><Difficulty />) Perception</>, <>The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled <Success /> reduces the <Setback /> suffered for difficult terrain by one.']},
-            {values: ['Plot Course', 'Average Piloting or Hard Perception', 'The crew member studies the terrain ahead and plots a course that should take the vehicle safely through it. On a successful check, each uncancelled success reduces the Setback suffered for difficult terrain by one.']}
-          ]}
-        />
+        <Accordion
+          contents={(
+            <Fragment>
+              <SmallWhiteSpaceBuffer />
+              <SubHeader>
+                Additional Vehicle Actions
+              </SubHeader>
+              <Table
+                columns={[{title: 'Action'}, {title: 'Skill and Difficulty', width: 200}, {title: 'Results'}]}
+                rows={additionalVehicleActions}
+              />
+              <SmallWhiteSpaceBuffer />
+              <SubHeader>
+                Jockey Actions
+              </SubHeader>
+              <Table
+                columns={[{title: 'Action'}, {title: 'Skill and Difficulty', width: 200}, {title: 'Results'}]}
+                rows={jockeyActions}
+              />
+              <SmallWhiteSpaceBuffer />
+              <SubHeader>
+                Vehicle Critical Hits
+              </SubHeader>
+              <Table
+                columns={[{title: 'd100', width: 75}, {title: 'Severity', width: 175}, {title: 'Result'}]}
+                rows={criticalHitsOnShip}
+              />
+            </Fragment>
+          )}
+        >
+          <LinkHeader color={orange}>
+            Toggle Genesys Combat Tables {window.innerWidth < 800 && '(not optimized for mobile)'}
+          </LinkHeader>
+        </Accordion>
         <SmallWhiteSpaceBuffer />
         <Footer>
           Copyright 2019 James Holbert · All images are public domain
@@ -537,3 +588,5 @@ const App = () => {
 }
 
 export default App;
+
+
