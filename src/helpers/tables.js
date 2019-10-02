@@ -97,7 +97,7 @@ export const criticalHitsOnShip = [
     values:[
       '19–36',
       <Fragment>Easy (<Difficulty />)</Fragment>,
-      <Fragment>Shrapnel Spray: Chunks of metal or wood are hurled at the occupants at deadly velocity. The pilot and occupants must each make a Hard (<Difficulty /><Difficulty /><Difficulty />) Resilience or Vigilance check or suffer 1 wound, plus 1 additional wound per ⊰on the check; you may spend ⊱⊱⊱ or ⊲ from this check to inflict a Critical Injury on the character.</Fragment>
+      <Fragment>Shrapnel Spray: Chunks of metal or wood are hurled at the occupants at deadly velocity. The pilot and occupants must each make a Hard (<Difficulty /><Difficulty /><Difficulty />) Resilience or Vigilance check or suffer 1 wound, plus 1 additional wound per <Failure /> on the check; the GM may spend <Threat /><Threat /><Threat /> or <Despair /> from this check to inflict a Critical Injury on the character.</Fragment>
     ]
   },{
     values:[
@@ -109,20 +109,20 @@ export const criticalHitsOnShip = [
     values:[
       '55–63',
       <Fragment>Average (<Difficulty /><Difficulty />)</Fragment>,
-      <Fragment>Navigation Damaged: The vehicle’s navigation is compromised (see Vehicle Components, on page 221). Or Replace with Heart Bell?</Fragment>
+      <Fragment>Rigging Damaged: The vehicle’s navigation is compromised (see Vehicle Components, on page 221).</Fragment>
     ]
   },{
     values:[
       '64–72',
       <Fragment>Average (<Difficulty /><Difficulty />)</Fragment>,
-      <Fragment>Propulsion Damaged: The vehicle’s propulsion is compromised (see Vehicle Components, on page 221). Replace with Windless Sails</Fragment>
+      <Fragment>Windless Sails Damaged: The vehicle’s propulsion is compromised (see Vehicle Components, on page 221). Replace with Windless Sails</Fragment>
     ]
   },
   {
     values:[
       '73–81',
       <Fragment>Average (<Difficulty /><Difficulty />)</Fragment>,
-      <Fragment>Defenses Damaged: The vehicle’s defenses are compromised (see Vehicle Components, on page 221). Replace with Sidirume Drums</Fragment>
+      <Fragment>Repulsion Drums Damaged: The vehicle’s defenses are compromised (see Vehicle Components, on page 221).</Fragment>
     ]
   },
   {
@@ -135,7 +135,7 @@ export const criticalHitsOnShip = [
     values:[
       '109–126',
       <Fragment>Hard  (<Difficulty /><Difficulty /><Difficulty />)</Fragment>,
-      <Fragment>Brakes Damaged: The vehicle’s brakes are compromised (see Vehicle Components, on page 221). Sidirume Hull Pipes to keep ship aloft</Fragment>
+      <Fragment>Anti-gravity Damaged: The vehicle’s sidirume pipes are compromised, lose 1 vertical range band every turn (see Vehicle Components, on page 221).</Fragment>
     ]
   },
   {
@@ -148,7 +148,7 @@ export const criticalHitsOnShip = [
     values:[
       '139–144',
       <Fragment>Daunting (<Difficulty /><Difficulty /><Difficulty /><Difficulty />)</Fragment>,
-      <Fragment>Fire!: The vehicle catches on fire. While the vehicle is on fire, each occupant suffers damage as discussed on page 111. A fire can be put out with a Hard  (<Difficulty /><Difficulty /><Difficulty />)Cool or Athletics check (or multiple checks for big vehicles).</Fragment>
+      <Fragment>Fire!: The vehicle catches on fire. While the vehicle is on fire, each occupant suffers damage as discussed on page 111. A fire can be put out with a Hard (<Difficulty /><Difficulty /><Difficulty />) Cool or Athletics check (or multiple checks for big vehicles).</Fragment>
     ]
   },{
     values:[
@@ -160,7 +160,7 @@ export const criticalHitsOnShip = [
     values:[
       '154+',
       <Fragment>–</Fragment>,
-      <Fragment>Vaporized: The vehicle is completely destroyed, consumed in a large and dramatic fireball. Nothing survives.</Fragment>
+      <Fragment>Sunk: The vehicle is completely unrepairable, descending until consumed by the unforgiving mist, not even offering the sound of a crash. All living souls receive the sailor's portion.</Fragment>
     ]
   }
 ]

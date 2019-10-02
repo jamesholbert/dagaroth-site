@@ -22,7 +22,7 @@ const Table = ({ columns, rows, rowClass, eventData }) => {
     <tr>
       {columns.map((col, i) => {
         return (
-          <TableHeader style={{ width: col.width }} className={col.align ? 'text-' + col.align : ''} key={i}>
+          <TableHeader style={{ width: window.innerWidth > 800 && col.width }} className={col.align ? 'text-' + col.align : ''} key={i}>
             {col.title || ''}
           </TableHeader>
         );
