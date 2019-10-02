@@ -108,6 +108,7 @@ const App = () => {
   const LinkHeader = styled(SubHeader)`
     color: ${blue};
     cursor: pointer;
+    text-decoration: underline;
   `
 
   const BodyText = styled.div`

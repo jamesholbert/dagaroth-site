@@ -14,8 +14,8 @@ export const additionalVehicleActions = [
   {
     values: [
       'Copilot', 
-      <Fragment>Average (<Difficulty /> <Difficulty />) Driving, Piloting, or Operating check</Fragment>, 
-      <Fragment>The crew member serves as the vehicle’s copilot, managing systems and auxiliary equipment to allow the pilot to focus on flying or driving. On a successful check, each uncancelled <Success /> downgrades the difficulty of the pilot’s next Driving, Piloting, or Operating check once.</Fragment>
+      <Fragment>Average (<Difficulty /> <Difficulty />) Engineering or Hard (<Difficulty /><Difficulty /><Difficulty />) Operating check</Fragment>, 
+      <Fragment>The engineering crew member coordinates to the helmsman from below decks, managing pressure and temperature of sidirume systems to give the helmsman an edge in maneuvering the ship. On a successful check, each uncancelled <Success /> downgrades the difficulty of the helmsman's next Driving, Piloting, or Operating check once.</Fragment>
       ]
     },
   {
@@ -37,13 +37,6 @@ export const additionalVehicleActions = [
       'Fire Discipline', 
       <Fragment>Hard (<Difficulty /><Difficulty /><Difficulty />) Leadership  or Discipline check</Fragment>, 
       <Fragment>The character forgoes fighting to analyze the opponents’ tactics and direct their comrades in achieving greater accuracy with weapons fire. If the check is successful, the next crew member firing a weapon on the vehicle adds <Boost /> to their check (plus an additional crew member for every additional <Success /><Success />). The character may also spend <Advantage /><Advantage /><Advantage /> to allow every hit from shipboard weapons to inflict 1 system strain on their target as well as regular damage until the beginning of the character’s next turn, as the carefully timed shots pummel shields and overload systems.</Fragment>
-      ]
-    },
-  {
-    values: [
-      'Scan the Enemy', 
-      <Fragment>Hard  (<Difficulty /><Difficulty /><Difficulty />) Perception check</Fragment>, 
-      <Fragment>The character uses the vehicle’s scanners to study the enemy. If successful, the character learns what weapons the targeted vehicle has, its modifications, and its system strain and hull trauma thresholds. The character can also spend <Advantage /><Advantage /> to learn its current system strain and hull trauma levels. </Fragment>
       ]
     },
 ]
@@ -84,6 +77,13 @@ export const jockeyActions = [
       <Fragment>The character uses a large vehicle, land-mass, or other obstruction to avoid being detected by the enemy. On a successful check, either nullify the effects of an enemy's "Gain the Advantage", or add <Setback /> to all actions and attacks against the character until the character's next turn. For each <Success /><Success /> beyond the first, add <Setback /> to checks and attacks made against them. Each <Advantage /><Advantage /> may be spent to downgrade the difficulty of Jockey Actions for their next turn by 1.</Fragment>
     ]
   },
+  {
+    values: [
+      'Scout the Enemy', 
+      <Fragment>Hard (<Difficulty /><Difficulty /><Difficulty />) Perception check</Fragment>, 
+      <Fragment>The character uses their unique position to scout the enemy. If successful, the character learns what weapons the targeted vehicle has, its modifications, and rough estimates on system strain and hull trauma thresholds. The character can also spend <Advantage /><Advantage /> to discern its current system strain and hull trauma levels.</Fragment>
+      ]
+  },  
 ]
 
 export const criticalHitsOnShip = [
