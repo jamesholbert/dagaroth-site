@@ -10,6 +10,7 @@ import Accordion from './accordion'
 import useWidth from '../hooks/useWidth'
 
 import { criticalHitsOnShip, additionalVehicleActions, jockeyActions } from '../helpers/tables'
+import { genesysQuestions, dagarothQuestions } from '../helpers/questions'
 import { getFontSize } from '../helpers'
 
 import hero from '../images/hero.jpg'
@@ -585,6 +586,41 @@ const App = () => {
           </LinkHeader>
         </Accordion>
         <SmallWhiteSpaceBuffer />
+
+        
+        <Accordion
+          contents={(
+            <Fragment>
+              <SmallLoreHeader>
+                (These 6 come straight out of the Genesys core rulebook)
+              </SmallLoreHeader>
+              <SmallLoreBody>
+                {genesysQuestions.map((question, i) => (
+                  <p key={i}>
+                    {question}
+                  </p>
+                ))}
+              </SmallLoreBody>
+              <SmallLoreHeader>
+                (Dagaroth specific questions)
+              </SmallLoreHeader>
+              <SmallLoreBody>
+                {dagarothQuestions.map((question, i) => (
+                  <p key={i}>
+                    {question}
+                  </p>
+                ))}
+              </SmallLoreBody>
+            </Fragment>
+          )}
+        >
+          <LinkHeader color={orange}>
+            Toggle Character Background Questions
+          </LinkHeader>
+        </Accordion>
+        <SmallWhiteSpaceBuffer />
+
+
         <Footer>
           Copyright 2019 James Holbert · All images are public domain
         </Footer>

@@ -65,13 +65,6 @@ export const jockeyActions = [
   },
   {
     values: [
-      'Gain the Advantage',
-      <Fragment>See Table III.2–18: Speed Advantage Difficulty</Fragment>,
-      <Fragment>While a jockey has the advantage, upgrade the ability of all combat checks made from them against the targeted Dragon twice, and upgrade the difficulty of all combat checks made by the target Dragon against the rider's Dragon twice. This action cannot be performed during a chase.</Fragment>
-    ]
-  },
-  {
-    values: [
       'Scapegoat',
       <Fragment>Average (<Difficulty /><Difficulty /> Riding check</Fragment>,
       <Fragment>The character uses a large vehicle, land-mass, or other obstruction to avoid being detected by the enemy. On a successful check, either nullify the effects of an enemy's "Gain the Advantage", or add <Setback /> to all actions and attacks against the character until the character's next turn. For each <Success /><Success /> beyond the first, add <Setback /> to checks and attacks made against them. Each <Advantage /><Advantage /> may be spent to downgrade the difficulty of Jockey Actions for their next turn by 1.</Fragment>
