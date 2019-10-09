@@ -20,6 +20,7 @@ const Table = ({ columns, rows, rowClass, eventData }) => {
   const TableHeader = styled.th`
     color: white;
     background-color: ${genesysOrange};
+    text-align: left;
   `
 
   const tableColumns = columns ? (
