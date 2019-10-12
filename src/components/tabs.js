@@ -15,7 +15,8 @@ const Tabs = ({ wide, tabs, initialTab = 0 }) => {
 	
 	const NavItem = styled.div`
 		cursor: pointer;
-    	font-size: ${getFontSize(3.5, wide)};
+		padding: 0 1rem;
+    	font-size: ${getFontSize(3.25, wide)};
     	text-decoration: ${p => p.selected ? 'underline' : 'none'};
 	`
 
