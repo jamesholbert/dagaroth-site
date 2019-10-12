@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import success from '../images/success.png'
-import failure from '../images/failure.png'
-import despair from '../images/dispair.png'
-import threat from '../images/threat.png'
-import advantage from '../images/advantage.png'
-import triumph from '../images/triumph.png'
+import success from '../images/symbols/success.png'
+import failure from '../images/symbols/failure.png'
+import despair from '../images/symbols/dispair.png'
+import threat from '../images/symbols/threat.png'
+import advantage from '../images/symbols/advantage.png'
+import triumph from '../images/symbols/triumph.png'
 
 const abilityGreen = '#47AC4E'
 const profYellow = '#FFF034'

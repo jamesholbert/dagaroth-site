@@ -7,12 +7,14 @@ import Audio from './audio'
 import Table from './table'
 import Accordion from './accordion'
 import Tabs from './tabs'
+import CharacterStatBlock from './statBlocks'
 
 import useWidth from '../hooks/useWidth'
 import useScrollPosition from '../hooks/useScrollPosition'
 
 import { criticalHitsOnShip, additionalVehicleActions, jockeyActions } from '../helpers/tables'
 import { genesysQuestions, dagarothQuestions } from '../helpers/questions'
+import { archetypes, origins, originOrRole, roles } from '../helpers/characterCreation'
 import { getFontSize } from '../helpers'
 
 import hero from '../images/hero.jpg'
@@ -32,6 +34,8 @@ const orange = '#EDA17B';
 const tan = '#F7DCA0';
 const grey = '#868DA0';
 const darkblue = '#19384D';
+
+const initialTab = process.env.REACT_APP_DEV_MODE ? 2 : 0
 
 const PageWrapper = styled.div`
   display: flex;
@@ -128,7 +132,7 @@ const App = () => {
     text-align: center;
   `
 
-  const SmallLoreContainer = styled.div`
+  const SplitContainer = styled.div`
     display: grid;
     grid-template-columns: ${wide ? '50% 50%' : '100%'};
   `
@@ -139,7 +143,7 @@ const App = () => {
     color: ${tan};
   `
 
-  const BigLoreContainer = styled.div`
+  const BigLoreWrapper = styled.div`
     ${wide && 'grid-column: span 2'};
   `
 
@@ -195,6 +199,8 @@ const App = () => {
             </HeroText>
           </RelativeWrapper>
           <Tabs
+            initialTab={initialTab}
+            wide={wide}
             tabs={[
               {
                 name: 'Introduction',
@@ -315,7 +321,7 @@ const App = () => {
                       Additional world flavor
                     </Header>
                     <SmallWhiteSpaceBuffer />
-                    <SmallLoreContainer>
+                    <SplitContainer>
                       <div> 
                         <SmallLoreHeader>
                           Sidirume Harvesting
@@ -358,7 +364,7 @@ const App = () => {
                           </p>
                         </SmallLoreBody>
                       </div>
-                      <BigLoreContainer>
+                      <BigLoreWrapper>
                         <SmallLoreHeader>
                           Aerial Combat
                         </SmallLoreHeader>
@@ -388,7 +394,7 @@ const App = () => {
                             death sentence if you have a couple people on board who can repair and replace pipes fast enough.
                           </p>
                         </SmallLoreBody>
-                      </BigLoreContainer>
+                      </BigLoreWrapper>
                       <div>
                         <SmallLoreHeader>
                           The Under Guild
@@ -447,7 +453,7 @@ const App = () => {
                           </p>
                         </SmallLoreBody>
                       </div>
-                    </SmallLoreContainer>
+                    </SplitContainer>
                     <SmallWhiteSpaceBuffer />
 
 
@@ -456,7 +462,7 @@ const App = () => {
                       The Crew
                     </Header>
                     <SmallWhiteSpaceBuffer />
-                    <SmallLoreContainer>
+                    <SplitContainer>
                       <div> 
                         <SmallLoreHeader>
                           The Cicada
@@ -578,7 +584,7 @@ const App = () => {
                           </CenterWrapper>
                         </SmallLoreBody>
                       </div>
-                    </SmallLoreContainer>
+                    </SplitContainer>
                   </Fragment>
                 )
               },
@@ -661,8 +667,138 @@ const App = () => {
                   <Fragment>
                     <SmallWhiteSpaceBuffer />
                     <SmallLoreBody centered>
-                      A great resource to use is <a href='https://genesysemporium.com/' rel="noopener noreferrer" target='_blank'>Genesys Emporium</a> for character sheet management.
+                      A great resource for character sheet management is <a href='https://genesysemporium.com/' rel="noopener noreferrer" target='_blank'>Genesys Emporium</a>.
                     </SmallLoreBody>
+                    <SmallLoreBody>
+                      Don't feel obligated to pick from these lists, they're only meant to serve as a base group of choices to model what
+                      player characters are like in the Dagaroth setting. If you want to create a custom archetype, origin, or role,
+                      coordinate with your GM and/or use the Genesys core rolebook to create them so as to keep world balance.
+                    </SmallLoreBody>                    
+                    <SmallWhiteSpaceBuffer />
+
+
+                    <Header>
+                      Archetypes
+                    </Header>
+
+                    <SmallLoreBody>
+                      <p>
+                        There are no additional premade archetypes in Dagaroth since careers and roles offer enough variation on archetypes to 
+                        make dynamic characters.
+                      </p>
+                      <p>
+                        For instance, there's no Dragon Jockey archetype because any of these would all have good and different reasons 
+                        for riding dragons, be it diplomatic, exploratory, for combat, etc.
+                      </p>
+                      <p>
+                        Note: Talents have been removed from archetypes. Instead, pick a talent from either your origin or your role. 
+                      </p>
+                      <p>
+                        Additional Note: Since Talents haven't been added yet, just pick one level 1 talent.
+                      </p>
+                    </SmallLoreBody>
+                    
+                    <SplitContainer wide={wide}>
+                      {archetypes.map(({title, wound, strain, exp, ...rest}, i) => (
+                        <div key={i}>
+                          <SubHeader>
+                            {title}
+                          </SubHeader>
+                          <CharacterStatBlock
+                            {...rest}
+                          />
+                          <SmallLoreBody centered>
+                            <p>
+                              Wound threshold: {wound} + brawn
+                            </p>
+                            <p>
+                              Strain threshold: {strain} + willpower
+                            </p>
+                            <p>
+                              Starting experience: {exp}
+                            </p>
+                          </SmallLoreBody>
+                        </div>
+                      ))}
+                    </SplitContainer>
+                    <SmallWhiteSpaceBuffer />
+
+
+                    <Header>
+                      Origins and Roles
+                    </Header>
+                    <SmallLoreBody>
+                      <p>
+                        Breaking strict Genesys adherance, careers in the Dagaroth setting are broken out into Origins and Roles.
+                        This is due to the fact that what a character does on a ship may be completely at odds with who they were before.
+                        That's part of the romance of sailing away on a ship, and the distinction allows for a more dynamic story for
+                        player characters.
+                      </p>
+                      <p>
+                        As typical in Genesys games, origins and roles (or careers) in Dagaroth aren't as linear as typical tabletop 
+                        RPGs. Since most players are going to be employed on a skyship, it's typical to be inclined to pick the 
+                        Sailor origin. However, origins are meant to be an emphasis of your backstory, and everyone knows there are 
+                        as many origin stories on a tall ship as there are sailors.
+                      </p>
+                      <p>
+                        Roles describe your current role in the crew in addition to whatever it is that furthers the mission of the ship.
+                      </p>
+                    </SmallLoreBody>
+                    
+
+                    <SubHeader>
+                      Origins
+                    </SubHeader>
+                    <SplitContainer wide={wide}>
+                      {origins.map(({title, skills, description}, i) => (
+                        <div key={i}>
+                          <SmallLoreHeader>{title}</SmallLoreHeader>
+                          <SmallLoreBody centered>
+                            <p>{description}</p>
+                            <p>Pick 4 skills from: {skills}</p>
+                          </SmallLoreBody>
+                        </div>
+                      ))}
+                    </SplitContainer>
+                    
+
+                    <SubHeader>
+                      Origin or Role
+                    </SubHeader>
+                    <SmallLoreBody centered>
+                      (These can function as either an origin or a role depending)
+                    </SmallLoreBody>
+                    <SplitContainer wide={wide}>
+                      {originOrRole.map(({title, skills, bonus, description}, i) => (
+                        <div key={i}>
+                          <SmallLoreHeader>{title}</SmallLoreHeader>
+                          <SmallLoreBody centered>
+                            <p>{description}</p>
+                            <p><u>Origin (pick 4 from)</u>: {skills}</p>
+                            <p><u>If used as Role</u>: {bonus}</p>
+                          </SmallLoreBody>
+                        </div>
+                      ))}
+                    </SplitContainer>
+
+                    
+                    <SubHeader>
+                      Roles
+                    </SubHeader>
+                    <SplitContainer wide={wide}>
+                      {roles.map(({title, bonus}, i) => (
+                        <div key={i}>
+                          <SmallLoreHeader>{title}</SmallLoreHeader>
+                          <SmallLoreBody centered>{bonus}</SmallLoreBody>
+                        </div>
+                      ))}
+                    </SplitContainer>
+                    <SmallWhiteSpaceBuffer />
+
+
+                    <Header>
+                      Background Questions
+                    </Header>
                     <SmallLoreHeader>
                       (These 6 questions come straight out of the Genesys core rulebook)
                     </SmallLoreHeader>
@@ -702,3 +838,5 @@ const App = () => {
 }
 
 export default App;
+
+

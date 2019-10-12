@@ -4,7 +4,9 @@ const useScrollPosition = () => {
 	const [y, setY] = useState(window.scrollPosition);
 
 	const handleScroll = e => {
-		setY(window.pageYOffset)
+		if (window.pageYOffset <= 10) {
+			setY(window.pageYOffset)	
+		} 
 	}
 
 	useEffect(() => {

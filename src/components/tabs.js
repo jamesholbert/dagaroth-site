@@ -9,13 +9,13 @@ const Nav = styled.div`
 	padding: 0 2rem;
 `
 
-const Tabs = ({ wide, tabs }) => {
-	const [tab, setTab] = useState(tabs[0].name);
+const Tabs = ({ wide, tabs, initialTab = 0 }) => {
+	const [tab, setTab] = useState(tabs[initialTab].name);
 	const selectedTab = tabs.find(t => t.name === tab)
 	
 	const NavItem = styled.div`
 		cursor: pointer;
-    	font-size: ${getFontSize(3, wide)};
+    	font-size: ${getFontSize(3.5, wide)};
     	text-decoration: ${p => p.selected ? 'underline' : 'none'};
 	`
 
