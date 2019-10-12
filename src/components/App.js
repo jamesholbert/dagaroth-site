@@ -29,6 +29,7 @@ import hereThereBe from '../audio/here_there_be_dragons.mp3'
 import theFirstToSail from '../audio/the_first_to_sail_the_skies.mp3'
 import tradingUnion from '../audio/trading_union.mp3'
 
+console.log(process.env.REACT_APP_DEV_MODE)
 const blue = '#00648E';
 const orange = '#EDA17B';
 const tan = '#F7DCA0';
