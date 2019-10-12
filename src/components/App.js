@@ -35,7 +35,7 @@ const tan = '#F7DCA0';
 const grey = '#868DA0';
 const darkblue = '#19384D';
 
-const initialTab = process.env.REACT_APP_DEV_MODE ? 2 : 0
+const initialTab = 0
 
 const PageWrapper = styled.div`
   display: flex;
